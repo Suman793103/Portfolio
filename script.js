@@ -1,28 +1,3 @@
-// Theme toggling
-const themeToggle = document.querySelector(".theme-toggle");
-const root = document.documentElement;
-let isDark = true;
-
-// Check for saved theme preference
-if (localStorage.getItem("theme") === "light") {
-  document.documentElement.setAttribute("data-theme", "light");
-  themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-  isDark = false;
-}
-
-themeToggle.addEventListener("click", () => {
-  isDark = !isDark;
-  if (isDark) {
-    document.documentElement.removeAttribute("data-theme");
-    localStorage.setItem("theme", "dark");
-    themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-  } else {
-    document.documentElement.setAttribute("data-theme", "light");
-    localStorage.setItem("theme", "light");
-    themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-  }
-});
-
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
